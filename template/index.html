@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Prévia: noindex até o usuário liberar a versão final -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Energia solar em [Cidade] | [Empresa]</title>
+  <meta name="description" content="[PREENCHER: 120 a 160 caracteres com cidade, benefício e chamada para simular a economia na conta de luz.]">
+  <meta name="theme-color" content="#13201a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Energia solar em [Cidade] | [Empresa]">
+  <meta property="og:description" content="Simule em 1 minuto quanto sua conta de luz pode cair.">
+  <meta property="og:image" content="https://cliente-dalla-labs-N.vercel.app/og.jpg">
+  <meta property="og:url" content="https://cliente-dalla-labs-N.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" as="image" href="/img/hero.webp" imagesrcset="/img/hero-800.webp 800w, /img/hero.webp 1600w" imagesizes="100vw" fetchpriority="high">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="previa" role="note">Prévia Dalla Labs · versão para aprovação</div>
+
+  <header class="header">
+    <a class="header__logo" href="#topo" aria-label="[Empresa], início">
+      <img src="/img/logo.webp" alt="[Empresa]" width="140" height="40">
+    </a>
+    <nav class="header__nav" aria-label="Seções">
+      <a href="#obras">Obras</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="botao botao--pequeno" href="#simulador">Simular economia</a>
+  </header>
+
+  <div class="sol-global" aria-hidden="true"></div>
+
+  <main id="conteudo">
+    <!-- HERO: 4 atos guiados por scroll (references/motion.md) -->
+    <section class="hero" id="topo" aria-label="Apresentação">
+      <div class="hero__stage">
+        <div class="hero__fundo" data-slot="hero" data-pedido="Telhado com placas, foto larga e de dia (drone ou do alto)">
+          <img class="hero__foto" src="/img/hero.webp" srcset="/img/hero-800.webp 800w, /img/hero.webp 1600w" sizes="100vw" alt="[PREENCHER: descrição da obra real da foto]" width="1600" height="1000" fetchpriority="high">
+          <div class="hero__sol" aria-hidden="true"></div>
+          <svg class="hero__cena" viewBox="0 0 400 300" aria-hidden="true">
+            <g class="hero__placas">
+              <rect class="placa" x="92"  y="118" width="46" height="28" rx="2"/>
+              <rect class="placa" x="142" y="108" width="46" height="28" rx="2"/>
+              <rect class="placa" x="192" y="98"  width="46" height="28" rx="2"/>
+              <rect class="placa" x="242" y="88"  width="46" height="28" rx="2"/>
+              <rect class="placa" x="117" y="150" width="46" height="28" rx="2"/>
+              <rect class="placa" x="167" y="140" width="46" height="28" rx="2"/>
+              <rect class="placa" x="217" y="130" width="46" height="28" rx="2"/>
+              <rect class="placa" x="267" y="120" width="46" height="28" rx="2"/>
+            </g>
+            <path class="fluxo" d="M190 180 C 190 230, 250 230, 300 262"/>
+            <path class="fluxo" d="M240 170 C 250 220, 290 230, 330 262"/>
+            <path class="fluxo" d="M140 190 C 150 240, 240 250, 290 268"/>
+          </svg>
+        </div>
+
+        <div class="hero__texto">
+          <p class="eyebrow">[Cidade] e região</p>
+          <h1 class="hero__titulo">
+            <span class="w">Energia</span> <span class="w">solar</span> <span class="w">em</span>
+            <span class="w">[Cidade],</span> <span class="w">do</span> <span class="w">projeto</span>
+            <span class="w">à</span> <span class="w">homologação.</span>
+          </h1>
+
+          <div class="hero__atos">
+            <p data-ato="0.22,0.5">Placas dimensionadas para o seu telhado e o seu consumo.</p>
+            <p data-ato="0.5,0.74">Geração de <strong><span class="hero__kwh">0</span> kWh</strong> por mês em um sistema médio.</p>
+            <div data-ato="0.72,1.01" class="hero__conta">
+              <span>Conta de luz</span>
+              <strong class="hero__conta-valor" data-antes="480" data-depois="60">R$ 480</strong>
+              <span class="hero__conta-trilho"><span class="hero__conta-barra"></span></span>
+            </div>
+          </div>
+
+          <div class="hero__ctas">
+            <a class="botao" href="#simulador">Simular minha economia</a>
+            <a class="botao botao--fantasma" data-whats href="#">Falar no WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="hero__pontos" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <!-- NÚMEROS: só valores do .md -->
+    <section class="numeros" data-reveal aria-label="Números da empresa">
+      <div class="numero" data-reveal-item><strong data-contar="0" data-sufixo="+">0</strong><span>anos instalando energia solar</span></div>
+      <div class="numero" data-reveal-item><strong data-contar="0">0</strong><span>obras entregues</span></div>
+      <div class="numero" data-reveal-item><strong data-contar="0" data-sufixo=" kWp">0</strong><span>instalados na região</span></div>
+    </section>
+
+    <!-- SIMULADOR -->
+    <section class="sim secao" id="simulador" aria-labelledby="sim-titulo">
+      <div class="secao__cabeca" data-reveal>
+        <p class="eyebrow" data-reveal-item>Simulador</p>
+        <h2 id="sim-titulo" data-split>Quanto a sua conta pode cair?</h2>
+        <p data-reveal-item>Arraste até o valor médio da sua conta de luz.</p>
+      </div>
+
+      <div class="sim__painel" data-reveal>
+        <div class="sim__entrada" data-reveal-item>
+          <label for="sim-conta">Conta de luz por mês</label>
+          <div class="sim__valor">
+            <span>R$</span>
+            <input id="sim-conta" class="sim__campo" type="number" inputmode="numeric" min="100" max="3000" step="10">
+          </div>
+          <input class="sim__range" type="range" aria-label="Valor da conta de luz">
+          <fieldset class="sim__ligacao">
+            <legend>Tipo de ligação</legend>
+            <label><input type="radio" name="ligacao" value="mono"> Mono</label>
+            <label><input type="radio" name="ligacao" value="bi" checked> Bi</label>
+            <label><input type="radio" name="ligacao" value="tri"> Tri</label>
+          </fieldset>
+        </div>
+
+        <div class="sim__resultado" data-reveal-item aria-live="polite">
+          <div class="sim__destaque">
+            <span>Economia estimada</span>
+            <strong data-out="economiaMes">R$ 0</strong>
+            <span>por mês</span>
+          </div>
+          <div class="sim__barras">
+            <div><span>Conta hoje</span><i class="sim__barra-hoje"></i></div>
+            <div><span>Depois: <b data-out="contaDepois">R$ 0</b></span><i class="sim__barra-depois"></i></div>
+          </div>
+          <dl class="sim__dados">
+            <div><dt>Sistema</dt><dd data-out="kwp">0 kWp</dd></div>
+            <div><dt>Placas</dt><dd data-out="placas">0</dd></div>
+            <div><dt>Área de telhado</dt><dd data-out="area">0 m²</dd></div>
+            <div><dt>Retorno</dt><dd data-out="payback">0 anos</dd></div>
+            <div><dt>Em 25 anos</dt><dd data-out="economia25">R$ 0</dd></div>
+            <div><dt>CO₂ evitado</dt><dd data-out="co2Ano">0 t/ano</dd></div>
+          </dl>
+          <div class="sim__placas" aria-hidden="true"></div>
+          <a class="botao sim__whats" href="#" target="_blank" rel="noopener noreferrer">Receber simulação no WhatsApp</a>
+          <p class="sim__aviso">Estimativa para referência. O valor final depende da visita técnica, do telhado e da tarifa da distribuidora.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANTES E DEPOIS: o mesmo telhado, mesmo ângulo. O scroll abre, o dedo arrasta. -->
+    <section class="secao ad" aria-labelledby="ad-titulo">
+      <div class="secao__cabeca" data-reveal>
+        <p class="eyebrow" data-reveal-item>Antes e depois</p>
+        <h2 id="ad-titulo" data-split>O mesmo telhado, gerando energia</h2>
+        <p data-reveal-item>Arraste para comparar. [PREENCHER: bairro, cidade · x kWp · conta de R$ y para R$ z]</p>
+      </div>
+      <div class="ad__quadro">
+        <figure class="slot ad__antes" data-slot="antes" data-pedido="Telhado ANTES da instalação, mesmo ângulo da foto depois">
+          <img src="/img/antes.webp" srcset="/img/antes-800.webp 800w, /img/antes.webp 1600w" sizes="(min-width: 1024px) 60vw, 100vw" alt="[PREENCHER: telhado antes da instalação]" width="1200" height="900" loading="lazy" decoding="async">
+        </figure>
+        <figure class="slot ad__depois" data-slot="depois" data-pedido="O mesmo telhado DEPOIS, com as placas instaladas">
+          <img src="/img/depois.webp" srcset="/img/depois-800.webp 800w, /img/depois.webp 1600w" sizes="(min-width: 1024px) 60vw, 100vw" alt="[PREENCHER: o mesmo telhado com as placas]" width="1200" height="900" loading="lazy" decoding="async">
+        </figure>
+        <span class="ad__rotulo ad__rotulo--antes" aria-hidden="true">Antes</span>
+        <span class="ad__rotulo ad__rotulo--depois" aria-hidden="true">Depois</span>
+        <span class="ad__alca" aria-hidden="true"></span>
+        <input class="ad__controle" type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois da instalação">
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA: uma foto real por passo -->
+    <section class="secao" aria-labelledby="passos-titulo">
+      <div class="secao__cabeca" data-reveal>
+        <p class="eyebrow" data-reveal-item>Como funciona</p>
+        <h2 id="passos-titulo" data-split>Do primeiro contato à energia ligada</h2>
+      </div>
+      <div class="passos">
+      <span class="passos__linha" aria-hidden="true"></span>
+      <ol>
+        <li class="passo">
+          <h3>Visita técnica</h3><p>Avaliamos telhado, sombreamento e padrão de entrada.</p>
+          <figure class="slot passo__foto" data-slot="passo-visita" data-pedido="Técnico avaliando um telhado ou o padrão de entrada" data-revelar>
+            <img src="/img/passo-visita.webp" srcset="/img/passo-visita-800.webp 800w, /img/passo-visita.webp 1600w" sizes="(min-width: 1024px) 25vw, 100vw" alt="[PREENCHER]" width="800" height="500" loading="lazy" decoding="async">
+          </figure>
+        </li>
+        <li class="passo">
+          <h3>Projeto</h3><p>Dimensionamento pelo seu consumo real, com proposta por escrito.</p>
+          <figure class="slot passo__foto" data-slot="passo-projeto" data-pedido="Projeto na tela, proposta impressa ou reunião com cliente" data-revelar>
+            <img src="/img/passo-projeto.webp" srcset="/img/passo-projeto-800.webp 800w, /img/passo-projeto.webp 1600w" sizes="(min-width: 1024px) 25vw, 100vw" alt="[PREENCHER]" width="800" height="500" loading="lazy" decoding="async">
+          </figure>
+        </li>
+        <li class="passo">
+          <h3>Instalação</h3><p>Equipe própria, normalmente em poucos dias de obra.</p>
+          <figure class="slot passo__foto" data-slot="passo-instalacao" data-pedido="Equipe fixando placas no telhado" data-revelar>
+            <img src="/img/passo-instalacao.webp" srcset="/img/passo-instalacao-800.webp 800w, /img/passo-instalacao.webp 1600w" sizes="(min-width: 1024px) 25vw, 100vw" alt="[PREENCHER]" width="800" height="500" loading="lazy" decoding="async">
+          </figure>
+        </li>
+        <li class="passo">
+          <h3>Homologação</h3><p>Cuidamos do processo com a distribuidora até a troca do medidor.</p>
+          <figure class="slot passo__foto" data-slot="passo-homologacao" data-pedido="Inversor instalado ou medidor novo da distribuidora" data-revelar>
+            <img src="/img/passo-homologacao.webp" srcset="/img/passo-homologacao-800.webp 800w, /img/passo-homologacao.webp 1600w" sizes="(min-width: 1024px) 25vw, 100vw" alt="[PREENCHER]" width="800" height="500" loading="lazy" decoding="async">
+          </figure>
+        </li>
+      </ol>
+      </div>
+    </section>
+
+    <!-- OBRAS: só fotos reais do cliente. Foto faltando = espaço reservado com o pedido. -->
+    <section class="secao" id="obras" aria-labelledby="obras-titulo">
+      <div class="secao__cabeca" data-reveal>
+        <p class="eyebrow" data-reveal-item>Obras</p>
+        <h2 id="obras-titulo" data-split>Telhados reais em [Cidade] e região</h2>
+      </div>
+      <div class="obras">
+        <figure class="slot obra" data-slot="obra-1" data-pedido="Obra principal: telhado inteiro com placas, de cima" data-revelar>
+          <img src="/img/obra-1.webp" srcset="/img/obra-1-800.webp 800w, /img/obra-1.webp 1600w" sizes="(min-width: 1024px) 60vw, 100vw" alt="[PREENCHER: descrição da obra]" width="1600" height="1200" loading="lazy" decoding="async">
+          <figcaption>[Bairro, cidade] · [x] kWp</figcaption>
+        </figure>
+        <figure class="slot obra" data-slot="obra-2" data-pedido="Detalhe das placas com o céu ao fundo" data-revelar>
+          <img src="/img/obra-2.webp" srcset="/img/obra-2-800.webp 800w, /img/obra-2.webp 1600w" sizes="(min-width: 1024px) 34vw, 50vw" alt="[PREENCHER: descrição da obra]" width="900" height="1200" loading="lazy" decoding="async">
+          <figcaption>[Bairro, cidade] · [x] kWp</figcaption>
+        </figure>
+        <figure class="slot obra" data-slot="obra-3" data-pedido="Fachada da casa com o sistema aparecendo" data-revelar>
+          <img src="/img/obra-3.webp" srcset="/img/obra-3-800.webp 800w, /img/obra-3.webp 1600w" sizes="(min-width: 1024px) 34vw, 50vw" alt="[PREENCHER: descrição da obra]" width="900" height="1200" loading="lazy" decoding="async">
+          <figcaption>[Bairro, cidade] · [x] kWp</figcaption>
+        </figure>
+        <figure class="slot obra" data-slot="obra-4" data-pedido="Obra comercial, rural ou em solo" data-revelar>
+          <img src="/img/obra-4.webp" srcset="/img/obra-4-800.webp 800w, /img/obra-4.webp 1600w" sizes="(min-width: 1024px) 34vw, 100vw" alt="[PREENCHER: descrição da obra]" width="1600" height="1200" loading="lazy" decoding="async">
+          <figcaption>[Bairro, cidade] · [x] kWp</figcaption>
+        </figure>
+        <figure class="slot obra" data-slot="obra-5" data-pedido="Inversor instalado na parede" data-revelar>
+          <img src="/img/obra-5.webp" srcset="/img/obra-5-800.webp 800w, /img/obra-5.webp 1600w" sizes="(min-width: 1024px) 34vw, 50vw" alt="[PREENCHER: descrição da obra]" width="900" height="1200" loading="lazy" decoding="async">
+          <figcaption>[Bairro, cidade] · [x] kWp</figcaption>
+        </figure>
+        <figure class="slot obra" data-slot="obra-6" data-pedido="Mais uma obra entregue na região" data-revelar>
+          <img src="/img/obra-6.webp" srcset="/img/obra-6-800.webp 800w, /img/obra-6.webp 1600w" sizes="(min-width: 1024px) 34vw, 50vw" alt="[PREENCHER: descrição da obra]" width="900" height="1200" loading="lazy" decoding="async">
+          <figcaption>[Bairro, cidade] · [x] kWp</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- QUEM FAZ: equipe e responsável técnico (prova de autoridade) -->
+    <section class="secao credito" aria-labelledby="credito-titulo">
+      <div class="secao__cabeca" data-reveal>
+        <p class="eyebrow" data-reveal-item>Quem faz</p>
+        <h2 id="credito-titulo" data-split>Equipe própria e responsável técnico</h2>
+      </div>
+      <div class="credito__grade">
+        <figure class="slot credito__equipe" data-slot="equipe" data-pedido="Foto da equipe, de preferência uniformizada numa obra" data-revelar>
+          <img src="/img/equipe.webp" srcset="/img/equipe-800.webp 800w, /img/equipe.webp 1600w" sizes="(min-width: 1024px) 60vw, 100vw" alt="[PREENCHER: equipe da empresa]" width="1500" height="1000" loading="lazy" decoding="async">
+        </figure>
+        <figure class="slot credito__rt" data-slot="responsavel" data-pedido="Retrato do responsável técnico" data-revelar>
+          <img src="/img/responsavel.webp" srcset="/img/responsavel-800.webp 800w, /img/responsavel.webp 1600w" sizes="(min-width: 640px) 40vw, 100vw" alt="[PREENCHER: nome do responsável técnico]" width="800" height="800" loading="lazy" decoding="async">
+          <figcaption>[PREENCHER: nome] · CREA [nº]</figcaption>
+        </figure>
+        <ul class="credito__lista" data-reveal>
+          <li data-reveal-item><strong>Garantias</strong><span>[PREENCHER: garantias de painéis, inversor e instalação]</span></li>
+          <li data-reveal-item><strong>Financiamento</strong><span>[PREENCHER ou remover]</span></li>
+          <li data-reveal-item><strong>Atendimento</strong><span>[PREENCHER: cidades atendidas]</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS: só reais. Foto do cliente com <figure class="slot" data-slot="depo-1" data-pedido="...">. Sem depoimento real, remova a seção. -->
+
+    <!-- FAQ -->
+    <section class="secao faq" aria-labelledby="faq-titulo">
+      <div class="secao__cabeca" data-reveal>
+        <p class="eyebrow" data-reveal-item>Dúvidas</p>
+        <h2 id="faq-titulo" data-split>Perguntas frequentes</h2>
+      </div>
+      <div data-reveal>
+        <details data-reveal-item><summary>Em quanto tempo o sistema se paga?</summary><p>Depende do consumo e da tarifa. O simulador acima dá uma estimativa; a proposta final sai depois da visita técnica.</p></details>
+        <details data-reveal-item><summary>E em dias nublados?</summary><p>O sistema gera menos, e o que sobra nos dias de sol vira crédito na distribuidora para compensar.</p></details>
+        <details data-reveal-item><summary>O que muda com a Lei 14.300?</summary><p>Parte da tarifa (o chamado fio B) passa a ser cobrada sobre a energia compensada de forma gradual. A simulação já considera isso.</p></details>
+        <details data-reveal-item><summary>Precisa de manutenção?</summary><p>Pouca: limpeza periódica das placas e acompanhamento da geração pelo aplicativo do inversor.</p></details>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final" id="contato" aria-labelledby="final-titulo">
+      <div class="final__midia" data-slot="final" data-pedido="Equipe no telhado terminando uma instalação, fim de tarde">
+        <img src="/img/final.webp" srcset="/img/final-800.webp 800w, /img/final.webp 1600w" sizes="100vw" alt="" width="1600" height="1000" loading="lazy" decoding="async">
+      </div>
+      <div class="final__texto" data-reveal>
+        <h2 id="final-titulo" data-reveal-item>Vamos calcular o seu sistema?</h2>
+        <p data-reveal-item>Mande uma mensagem e receba a proposta por escrito, sem compromisso.</p>
+        <a class="botao" data-whats href="#" data-reveal-item>Falar no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p><strong>[Empresa]</strong> · [Cidade] e região</p>
+    <p>[PREENCHER: CNPJ, se houver] · <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+    <p class="rodape__dalla">© <span class="ano"></span> · Site em prévia por Dalla Labs</p>
+  </footer>
+
+  <a class="whats-flutuante" data-whats href="#" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
+  </a>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
